@@ -32,8 +32,8 @@ using std::endl;
 
 struct UserData
 {
-    double visc = 1.0e-5;  //viscosity of fluid, what is roughly 1e-7
-    double hcutoff = 0.2;  // h cut off
+	double visc = 1.0e-5;  //viscosity of fluid, what is roughly 1e-7
+	double hcutoff = 0.2;  // h cut off
 	double hrough = 0.01;  // surface roughness
 };
 
@@ -51,9 +51,10 @@ void Setup (DEM::Domain & dom, void * UD) //function that is going to be called 
 		double Reff = R1*R2/(R1+R2);
 
         double dist = norm(P1->x - P2->x) - R1 - R2;
+	dist = std::max(dist, dat.hrough);
 		
         if (dist > dat.hcutoff) continue;
-		if (dist < dat.hrough) continue;
+	// if (dist < dat.hrough) continue;
         Vec3_t normal = P2->x - P1->x;
         normal /= norm(normal);
 
