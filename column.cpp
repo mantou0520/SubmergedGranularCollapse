@@ -386,7 +386,7 @@ int main(int argc, char **argv) try
         dt = 0.5*dom.CriticalDt(); //Calculating time step
         dom.Alpha = R; //Verlet distance
 	    //d.WriteXDMF("test");
-        dom.Solve(/*tf*/Tf, dt, /*dtOut*/dtOut, &Setup, NULL, "column_cube", 2, Nproc);
+        dom.Solve(/*tf*/Tf, dt, /*dtOut*/dtOut, &Setup, NULL, "column_sphere", 2, Nproc);
     }
     else throw new Fatal("Packing for particle type not implemented yet");
 
