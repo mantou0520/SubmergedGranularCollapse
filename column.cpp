@@ -32,7 +32,7 @@ using std::endl;
 
 struct UserData
 {
-	double visc = 1.0e-5;  //viscosity of fluid, what is roughly 1e-7
+	double visc = 1.0e-5;  //viscosity of fluid, water is roughly 1e-7
 	double hcutoff = 0.1;  // h cut off
 	double hrough = 0.01;  // surface roughness
 	double GammaSurf = 0.001;  // surface tension
